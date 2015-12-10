@@ -1,7 +1,13 @@
-//
-   Created by zhoumaoqiao on 15/12/9.
-   block content
-h1= title
-p Upload your #{title}
+//Created by zhoumaoqiao on 15/12/9.
+extends layout
+
+block content
+   viv
+      h3
+      | Please upload your csv file to find the right email addresses!
+   div
+      form(action="/upload", method="post", enctype="multipart/form-data")
+         input(type="file", accept=".csv",name="uploadsCSVFile")
+         button(type="submit") Upload
 
 
