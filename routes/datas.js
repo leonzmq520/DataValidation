@@ -6,12 +6,12 @@ var fs = require('fs');
 var csv = require('fast-csv');
 
 /* GET load data page. */
-exports.datas = function (req, res) {
+exports.uploadFile = function (req, res) {
     res.render('datas', {title: 'datas'});
 };
 
 /* POST upload file data */
-exports.download = function (req, res) {
+exports.upload = function (req, res) {
     console.log('uploads file path:::::', req.files.uploadsCSVFile.path);
     var orignalFileName = req.files.uploadsCSVFile.originalFilename;
     var uploadsFilePath = req.files.uploadsCSVFile.path;
@@ -34,15 +34,6 @@ exports.download = function (req, res) {
                 }
                 return {
                     "UID": obj.UID,
-                    "Company": obj.Company,
-                    "Contact Salutation": obj['Contact Salutation'],
-                    "Title": obj.Title,
-                    "First Name": obj['First Name'],
-                    "Last Name": obj['Last Name'],
-                    "JobTitle":obj.JobTitle,
-                    "Phone":obj.Phone,
-                    "Domain":obj.Domain,
-                    "Company Formatted Address":obj['Company Formatted Address'],
                     "first_name": obj.first_name,
                     "last_name": obj.last_name,
                     "domain": obj.domain,

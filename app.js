@@ -27,11 +27,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.get('/', routes.index);
-
-//app.get('/',routes);
-//app.get('/users',users);
-app.get('/upload',datas.datas);
-app.post('/upload',multipartMiddleware,datas.download);
+app.get('/upload',datas.uploadFile);
+app.post('/upload',multipartMiddleware,datas.upload);
 
 
 
